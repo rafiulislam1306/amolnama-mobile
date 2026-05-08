@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "283254200113-b2s2l7m4hjgmdls2b1fu3j1po6c0f850.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rafiulislam.amolnama",
+            "certificate_hash": "a0fb470d626e0e02e14c7f09b7f0c17cffb46890"
+          }
+        },
+        {
           "client_id": "283254200113-d2k3kg4ec60269gfiuk4ehtlp074s7e1.apps.googleusercontent.com",
           "client_type": 3
         }

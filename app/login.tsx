@@ -7,7 +7,7 @@ import { auth } from '../src/config/firebase';
 export default function LoginScreen() {
   const [request, response, promptAsync] = Google.useAuthRequest({
     // Paste your Android Client ID from google-services.json here
-    androidClientId: "283254200113-xxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+    androidClientId: "283254200113-b2s2l7m4hjgmdls2b1fu3j1po6c0f850.apps.googleusercontent.com",
     
     // Paste your Web Client ID from Firebase Auth settings here
     webClientId: "283254200113-d2k3kg4ec60269gfiuk4ehtlp074s7e1.apps.googleusercontent.com",
