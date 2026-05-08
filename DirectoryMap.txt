@@ -1,0 +1,44 @@
+Amolnama POS Directory Map
+=========================
+├── amolnama-mobile
+│   ├── .gitignore
+│   ├── .vscode
+│   │   ├── extensions.json
+│   │   └── settings.json
+│   ├── app
+│   │   ├── (tabs)
+│   │   │   ├── explore.tsx
+│   │   │   ├── index.tsx
+│   │   │   └── _layout.tsx
+│   │   ├── modal.tsx
+│   │   └── _layout.tsx
+│   ├── app.json
+│   ├── babel.config.js
+│   ├── components
+│   │   ├── external-link.tsx
+│   │   ├── haptic-tab.tsx
+│   │   ├── hello-wave.tsx
+│   │   ├── parallax-scroll-view.tsx
+│   │   ├── themed-text.tsx
+│   │   ├── themed-view.tsx
+│   │   └── ui
+│   │       ├── collapsible.tsx
+│   │       ├── icon-symbol.ios.tsx
+│   │       └── icon-symbol.tsx
+│   ├── constants
+│   │   └── theme.ts
+│   ├── eslint.config.js
+│   ├── global.css
+│   ├── hooks
+│   │   ├── use-color-scheme.ts
+│   │   ├── use-color-scheme.web.ts
+│   │   └── use-theme-color.ts
+│   ├── metro.config.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   ├── scripts
+│   │   └── reset-project.js
+│   ├── tailwind.config.js
+│   └── tsconfig.json
+└── watcher.js
