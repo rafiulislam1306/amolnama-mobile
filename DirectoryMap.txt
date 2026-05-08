@@ -9,6 +9,7 @@ Amolnama POS Directory Map
 │   │   ├── explore.tsx
 │   │   ├── index.tsx
 │   │   └── _layout.tsx
+│   ├── login.tsx
 │   ├── modal.tsx
 │   └── _layout.tsx
 ├── app.json
@@ -27,9 +28,11 @@ Amolnama POS Directory Map
 ├── constants
 │   └── theme.ts
 ├── DirectoryMap.txt
+├── eas.json
 ├── eslint.config.js
 ├── expo-env.d.ts
 ├── global.css
+├── google-services.json
 ├── hooks
 │   ├── use-color-scheme.ts
 │   ├── use-color-scheme.web.ts
@@ -42,8 +45,17 @@ Amolnama POS Directory Map
 ├── scripts
 │   └── reset-project.js
 ├── src
+│   ├── config
+│   │   └── firebase.ts
+│   ├── data
+│   │   ├── catalog.ts
+│   │   └── products.ts
+│   ├── hooks
+│   │   └── useAppInit.ts
 │   ├── store
+│   │   └── useAppStore.ts
 │   └── types
+│       └── index.ts
 ├── tailwind.config.js
 ├── tsconfig.json
 └── watcher.js

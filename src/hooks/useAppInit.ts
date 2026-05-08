@@ -9,9 +9,11 @@ export function useAppInit() {
   const { setInitialData, setUser } = useAppStore();
 
   useEffect(() => {
+    // This listens for the moment the user logs in
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
         try {
+          // Fetch the user's role and desk from your EXISTING Firestore data
           const userSnap = await getDoc(doc(db, 'users', firebaseUser.uid));
           const userData = userSnap.data() || {};
           
@@ -21,7 +23,9 @@ export function useAppInit() {
             currentDeskId: userData.assignedDeskId || null,
           });
         } catch (error) {
-          console.error("Init Error:", error);
+          console.error("Failed to sync user data from Firestore:", error);
+          // Even if Firestore fails, we set the user so they aren't stuck on login
+          setUser(firebaseUser); 
         }
       } else {
         setUser(null);
