@@ -1,25 +1,18 @@
+import { Stack } from "expo-router";
+import { ActivityIndicator, View } from "react-native";
 import "../global.css";
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { useAppInit } from "../src/hooks/useAppInit";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const isReady = useAppInit();
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+  if (!isReady) {
+    return (
+      <View className="flex-1 items-center justify-center bg-blue-600">
+        <ActivityIndicator size="large" color="white" />
+      </View>
+    );
+  }
+
+  return <Stack screenOptions={{ headerShown: false }} />;
 }
