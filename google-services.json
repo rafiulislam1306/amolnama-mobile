@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "283254200113",
+    "firebase_url": "https://amolnama-cc2bf-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "amolnama-cc2bf",
+    "storage_bucket": "amolnama-cc2bf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283254200113:android:20423ad0c8114ea68ec210",
+        "android_client_info": {
+          "package_name": "com.rafiulislam.amolnama"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283254200113-d2k3kg4ec60269gfiuk4ehtlp074s7e1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIfVxOcy02kpYhCat9ykhCAcwhMktL56Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283254200113-d2k3kg4ec60269gfiuk4ehtlp074s7e1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

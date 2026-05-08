@@ -1,3 +1,4 @@
+import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { auth, db } from '../config/firebase';
@@ -5,30 +6,25 @@ import { useAppStore } from '../store/useAppStore';
 
 export function useAppInit() {
   const [isReady, setIsReady] = useState(false);
-  const setInitialData = useAppStore((state) => state.setInitialData);
+  const { setInitialData, setUser } = useAppStore();
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async (user) => {
-      if (user) {
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser) {
         try {
-          // 1. Fetch User Role/Desk
-          const userSnap = await getDoc(doc(db, 'users', user.uid));
+          const userSnap = await getDoc(doc(db, 'users', firebaseUser.uid));
           const userData = userSnap.data() || {};
-
-          // 2. Fetch Global Catalog
-          const globalSnap = await getDoc(doc(db, 'global', 'settings'));
-          const globalData = globalSnap.data() || {};
-
-          // 3. Sync to Store (The Mobile "Brain")
+          
           setInitialData({
-            user,
+            user: firebaseUser,
             role: userData.role || 'user',
             currentDeskId: userData.assignedDeskId || null,
-            globalCatalog: globalData.catalog || {},
           });
         } catch (error) {
-          console.error("Initialization Failed:", error);
+          console.error("Init Error:", error);
         }
+      } else {
+        setUser(null);
       }
       setIsReady(true);
     });
